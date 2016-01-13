@@ -48,7 +48,7 @@ var svg = d3.select("body").append("svg")
 //root.x0 = height / 2;
 //root.y0 = 0;
 
-d3.json("flare.json",function(d){root=d;});
+d3.json("flarenew.json",function(d){root=d;});
 
 function update(source,root) {
 
@@ -177,9 +177,8 @@ function collapse(d) {
 }
 
 //root.children.forEach(collapse);
-d3.json("flare.json",function(d){return update(d,d);});
+d3.csv("flarenew.json",function(d){return update(d,d);});
 
-d3.select(self.frameElement).style("height", "800px");
 
 
 </script>

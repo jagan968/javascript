@@ -17,14 +17,7 @@
 
 <script>
 
-var data = [
- { "name" : "ABC", "parent":"DEF", "depth": 1 },
- { "name" : "DEF", "parent":"null", "depth": 0 },
- { "name" : "new_name", "parent":"ABC", "depth": 2 },
- { "name" : "new_name2", "parent":"ABC", "depth": 2 },
- { "name" : "Foo", "parent":"DEF", "depth": 2 },
- { "name" : "Bar", "parent":"null", "depth": 2 }
-];
+d3.csv("csvtojson.csv",function(data){
 
 // create a name: node map
 var dataMap = data.reduce(function(map, node) {
@@ -50,9 +43,9 @@ data.forEach(function(node) {
 
 // show what we've got
 d3.select('body').append('pre')
-    .text(JSON.stringify(tree, null, '  '));
+  .text(JSON.stringify(tree, null, '  '));
 	
-d3.select('body').append('pre').text(JSON.stringify(dataMap,null,'  '));
+})
 
 	
 </script>

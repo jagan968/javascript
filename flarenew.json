@@ -1,0 +1,13 @@
+  {
+    "name": "DEF",
+    "children": [
+      {
+        "name": "ABC",
+        "children": [
+          {"name": "new_name"},
+          {"name": "new_name2"}
+        ]
+      },
+      {"name": "Foo"}
+    ]
+  }

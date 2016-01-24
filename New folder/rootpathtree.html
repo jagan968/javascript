@@ -1,0 +1,55 @@
+
+---
+layout: theme:demo
+title: Progressive reveal animation in D3.js using a SVG ClipPath
+post: /2011/08/progressive-reveal-animations-in-svg-using-a-svgclippath
+---
+
+<style>
+    g.node {
+        font-family: Verdana, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer
+    }
+
+    circle.node-dot {
+        fill: lightsalmon;
+        stroke: red;
+        stroke-width: 1px;;
+    }
+
+    circle.hover {
+        fill: darkblue;
+    }
+
+    path.link {
+        fill: none;
+        stroke: gray;
+    }
+
+    path.selected {
+        stroke: darkred;
+        fill: none;
+        stroke-width: 5px;
+    }
+
+</style>
+
+<h4>
+    Click on a node to see an animated path to the root
+</h4>
+
+<div id="tree-container"></div>
+
+<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="underscore-min.js"></script>
+<script type="text/javascript" src="d3.min.js"></script>
+<script type="text/javascript" src="d3.layout.min.js"></script>
+<script type="text/javascript" src="buildTree.js"></script>
+
+<script>
+    $(function () {
+        buildTree("#tree-container");
+    });
+</script>

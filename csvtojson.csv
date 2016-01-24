@@ -1,0 +1,7 @@
+name,parent,depth,type
+ABC,DEF,1,1
+DEF,null,0,2
+new_name,ABC,2,2
+new_name2,ABC,2,3
+Foo,DEF,2,4
+Bar,null,2,1

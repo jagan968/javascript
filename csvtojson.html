@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.link {
+  stroke: #000;
+}
+
+.node {
+  stroke: #fff;
+}
+
+</style>
+<body>
+<script src="d3.min.js"></script>
+<script src="underscore-min.js"></script>
+
+<script>
+
+d3.csv("csvtojson.csv",function(data){
+
+// create a name: node map
+var dataMap = data.reduce(function(map, node) {
+    map[node.name] = node;
+    return map;
+}, {});
+
+// create the tree array
+var tree = [];
+data.forEach(function(node) {
+    // add to parent
+    var parent = dataMap[node.parent];
+    if (parent) {
+        // create child array if it doesn't exist
+        (parent.children || (parent.children = []))
+            // add node to child array
+            .push(node);
+    } else {
+        // parent is null or missing
+        tree.push(node);
+    }
+});
+
+// show what we've got
+d3.select('body').append('pre')
+  .text(JSON.stringify(tree, null, '  '));
+	
+})
+
+	
+</script>
+</body>
